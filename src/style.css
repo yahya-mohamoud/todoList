@@ -127,3 +127,7 @@ select{
     margin-bottom: 20px;
 }
 
+#adTask:hover{
+    background-color: #18122B;
+    cursor: pointer;
+}

@@ -21,7 +21,7 @@
                         <label for="desc">Description</label>
                         <textarea name="desc" id="desc" value="desc" placeholder="Description" minlength="5"></textarea>
                         <label for="date">Due to Date:*</label>
-                        <input type="date" id="date" required>
+                        <input type="date" id="date" name="dt" required>
                         <label for="priority">select Priority</label>
                         <select name="priority" id="priority">
                             <option value="low">Low</option>
@@ -35,9 +35,12 @@
             </div>
             <div class="sidebar">
                 <ul>
-                    <li>Today</li>
-                    <li>upcoming</li>
-                    <li>This Week</li>
+                    <li id="adTask">
+                        <h3>Add Task</h3>
+                    </li>
+                    <li id="td"><h4>Today</h4></li>
+                    <!-- <li>upcoming</li> -->
+                    <!-- <li>This Week</li> -->
                 </ul>
                 <div class="projects">
                     <h4>projects</h4>
