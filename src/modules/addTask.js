@@ -1,5 +1,28 @@
-export function displayTasks () {
+import { handleDlt } from "./handleDlt"
+
+export function addTasks () {
+    const title = document.querySelector("#title")
+    const desc = document.querySelector("#desc")
+    const priority = document.querySelector("#priority")
+    const date = document.querySelector("#date")
+    const container = document.querySelector(".container")
+
+    let tasksArr = []
+    function Task (title, desc, priority, date) {
+        this.title = title;
+        this.desc = desc;
+        this.priority =priority;
+        this.date = date;
+
+    }
+
+    const task1 = new Task (title.value, desc.value, priority.value, date.value)
+
+    tasksArr.push(task1)
+    // task.push(task1)
+    console.log(tasksArr);
     
+
     const contentDiv = document.createElement("div")
     contentDiv.classList.add("contentDiv")
     
@@ -34,4 +57,7 @@ export function displayTasks () {
     contentDiv.appendChild(checkbox)
 
     container.appendChild(contentDiv)
+handleDlt()
 }
+
+// console.log(task);

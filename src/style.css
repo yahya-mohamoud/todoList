@@ -85,6 +85,17 @@ input{
     outline: none;
 }
 
+#proj{
+    height: 30px;
+    width: 150px;
+    margin-left: 10px;
+}
+
+.projects > * {
+    margin-left: 10px;
+
+}
+
 
 input:focus {
     border: 2px solid var(--border-line-fc);
@@ -111,7 +122,7 @@ select{
     box-shadow: 2px 2px 2px 2px var(--sc-bg-cl);
 }
 
-.allDiv{
+.contentDiv{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
