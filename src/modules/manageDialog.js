@@ -22,16 +22,20 @@ export function manageDialog () {
         const desc = document.querySelector("#desc").value;
         const priority = document.querySelector("#priority").value;
         const date = document.querySelector("#date").value;
-        // task.push(title)
-        // task.push(desc)
-        // task.push(priority)
-        // task.push(date)
-       addingTask(title, desc, priority, date)
-        console.log(tasks);
+      
+        const taskObj = {
+            title: title,
+            desc: desc,
+            priority: priority,
+            date: date
+        };
+
+        tasks.push(taskObj)
+    //    addingTask(title, desc, priority, date)
 
         dialog.close()
         lclStor()
-        getItem()        
+        // getItem()        
     })
 
 } 

@@ -5,18 +5,21 @@ export function lclStor () {
 }
 
 export function getItem () {
-    const storedArr = localStorage.getItem("task")
-    tasks = storedArr ? JSON.parse(storedArr):[];
-    tasks.forEach(element => {
-        console.log(element);
+    const storedArr = JSON.parse(localStorage.getItem("task"))
+    
+    storedArr.forEach(element => {
+        const title = element.title;
+        const desc = element.desc;
+        const date = element.date;
+        const priority = element.priority;
+
+        
+        console.log(`title: ${title}`, `desc: ${desc}`, `date: ${date}, Priority: ${priority}`);
         
         
     });
-
-  
-} 
     
- export function addingTask (task) {
-    tasks.push(task)
-    lclStor()
- }   
+} 
+  
+    
+ 

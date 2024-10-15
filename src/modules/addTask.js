@@ -1,4 +1,5 @@
 import { handleDlt } from "./handleDlt"
+import { lclStor, tasks } from "./localStorae"
 
 export function addTasks () {
     const title = document.querySelector("#title")
@@ -6,22 +7,6 @@ export function addTasks () {
     const priority = document.querySelector("#priority")
     const date = document.querySelector("#date")
     const container = document.querySelector(".container")
-
-    let tasksArr = []
-    function Task (title, desc, priority, date) {
-        this.title = title;
-        this.desc = desc;
-        this.priority =priority;
-        this.date = date;
-
-    }
-
-    const task1 = new Task (title.value, desc.value, priority.value, date.value)
-
-    tasksArr.push(task1)
-    // task.push(task1)
-    console.log(tasksArr);
-    
 
     const contentDiv = document.createElement("div")
     contentDiv.classList.add("contentDiv")
@@ -57,6 +42,16 @@ export function addTasks () {
     contentDiv.appendChild(checkbox)
 
     container.appendChild(contentDiv)
+
+    // const todosObj = {
+    //     title: title.value,
+    //     desc: desc.value,
+    //     date: date.value,
+    //     priority: priority.value
+    // }
+
+    // tasks.push(todosObj)
+    lclStor()
 handleDlt()
 }
 
