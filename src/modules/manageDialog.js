@@ -1,5 +1,5 @@
 import { addTasks } from "./addTask"
-import { addingTask, getItem, lclStor, tasks } from "./localStorae"
+import {  lclStor, tasks } from "./localStorage"
 
 export function manageDialog () {
     const dialog = document.querySelector("dialog")
@@ -12,7 +12,12 @@ export function manageDialog () {
     }) 
 
     closeBtn.addEventListener("click", () => {
-        dialog.close()
+        const input = document.querySelector("#title")
+        const date = document.querySelector("#date")
+        if(input.checkValidity() && date.checkValidity()) {
+            dialog.close()
+
+        }
     })
 
     submitBtn.addEventListener("click", (e) =>{
@@ -31,11 +36,9 @@ export function manageDialog () {
         };
 
         tasks.push(taskObj)
-    //    addingTask(title, desc, priority, date)
+        lclStor(tasks)
 
         dialog.close()
-        lclStor()
-        // getItem()        
     })
 
 } 

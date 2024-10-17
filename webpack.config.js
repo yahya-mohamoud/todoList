@@ -10,6 +10,11 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     clean: true,
   },
+
+  
+
+  
+
   devtool: "eval-source-map",
   devServer: {
     watchFiles: ["./src/template.html"],
@@ -19,6 +24,7 @@ module.exports = {
       template: "./src/template.html",
     }),
   ],
+
   module: {
     rules: [
       {

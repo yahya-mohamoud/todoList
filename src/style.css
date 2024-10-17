@@ -2,7 +2,7 @@
     --pr-bg-cl: #635985;
     --sc-bg-cl: #443C68;
     --tr-bg-cl: #393053;
-    --fr-bg-cl: #18122B;
+    --fr-bg-cl: #18122b;
 
     --border-line-fc: green;
     --border-line-invld: red;
@@ -39,7 +39,8 @@ h1{
 .container{ 
     grid-area: 1 / 2 / 5 / 7;
     background-color: var(--pr-bg-cl);
-
+    border-left: 2px solid black;
+    
 }
 
 .sidebar{
@@ -85,17 +86,24 @@ input{
     outline: none;
 }
 
-#proj{
-    height: 30px;
-    width: 150px;
-    margin-left: 10px;
+
+
+#projct {
+    width: 180px;
+    
 }
 
-.projects > * {
-    margin-left: 10px;
-
+.projects {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
 }
 
+.svBtn{
+    width: 120px;
+    margin-top: -18px;
+
+}
 
 input:focus {
     border: 2px solid var(--border-line-fc);
@@ -115,6 +123,8 @@ select{
     color: var(--ft-cl);
     margin: 10px;
     border-radius: 4px;
+    width: 180px;
+    cursor: pointer;
 }
 
 .openBtn:hover{
@@ -124,13 +134,13 @@ select{
 
 .contentDiv{
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: space-between;
-    background-color: #18122B;
+    align-items: center;
+    background-color: #18122ba0;
     margin:  10px ;
     padding: 0 10px;
-    /* align-items: center; */
-    margin-right: 20px;
+    flex-wrap: wrap;
 }
 
 .dltBtn{
@@ -142,3 +152,8 @@ select{
     background-color: #18122B;
     cursor: pointer;
 }
+
+h4{
+    cursor: pointer;
+}
+
