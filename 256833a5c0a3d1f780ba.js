@@ -5,5 +5,4 @@ import { formatDate } from "./modules/formatDate"
 
 manageDialog()
 displayTasks()
-// console.log(formatDate());
 
