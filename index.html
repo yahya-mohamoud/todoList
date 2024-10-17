@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="9d5424d6cc78e1ee4184.js" defer type="module"></script>
+    <title>Todo list</title>
+<script defer src="main.js"></script></head>
+<body>
+    <header id="mainHeader">
+        <h1>Todo List</h1>
+    </header>
+    <main>
+        <div class="main">
+            <div class="container">
+                <button class="openBtn">Add a Task</button>
+                <dialog>
+                    <form action="">
+                        <label for="title">Title:*</label>
+                        <input type="text" id="title"  required placeholder="Task title" required>
+                        <label for="desc">Description</label>
+                        <textarea name="desc" id="desc" value="desc" placeholder="Description" minlength="5"></textarea>
+                        <label for="date">Due to Date:*</label>
+                        <input type="date" id="date" name="dt" required>
+                        <label for="priority">select Priority</label>
+                        <select name="priority" id="priority">
+                            <option value="low">Low</option>
+                            <option value="medium" selected>medium</option>
+                            <option value="high">high</option>
+                        </select>
+                        <button class="close">Close</button>
+                        <button type="submit" class="submit">Submit</button>
+                    </form>
+                </dialog>
+            </div>
+            <div class="sidebar">
+                <ul>
+                    <li id="adTask">
+                        <h3>Add Task</h3>
+                    </li>
+                    <li id="td"><h4>Today</h4></li>
+                    <!-- <li>upcoming</li> -->
+                    <!-- <li>This Week</li> -->
+                </ul>
+                <div class="projects">
+                    <h4>projects</h4>
+                    <label for="addProj">Add Project</label>
+                    <input type="text" id="proj" placeholder="add project">
+                    <br>
+                    <button class="svBtn">Save</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer></footer>
+</body>
+</html>
