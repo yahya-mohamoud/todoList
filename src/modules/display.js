@@ -54,7 +54,7 @@ export function displayTasks() {
             dltBtn1.addEventListener("click", () => {
                 storedArr.splice(index, 1);
                 localStorage.setItem("task", JSON.stringify(storedArr));
-                location.reload()
+                // location.reload()
             })
 
         });
