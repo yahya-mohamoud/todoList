@@ -14,7 +14,7 @@ export function displayTasks() {
 
     storedArr.forEach((element, index) => {
 
-        element.forEach((task) => {
+        element.forEach(task => {
             const title = task.title;
             const desc = task.desc;
             const priority = task.priority;
