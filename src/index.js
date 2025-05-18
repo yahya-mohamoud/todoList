@@ -36,7 +36,7 @@ function displayProjects() {
     div.classList.add("project-item");
 
     if (project === activeProject) {
-       return div.classList.add("active");
+        div.classList.add("active");
     }
 
     div.addEventListener("click", () => {
@@ -46,7 +46,7 @@ function displayProjects() {
     });
 
     const delBtn = document.createElement("button");
-    delBtn.textContent = "🗑️";
+    delBtn.textContent = "🗑";
     delBtn.classList.add("delete-btn");
     delBtn.addEventListener("click", (e) => {
       e.stopPropagation();
