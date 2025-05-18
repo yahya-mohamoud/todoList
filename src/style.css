@@ -1,159 +1,134 @@
-:root{
-    --pr-bg-cl: #635985;
-    --sc-bg-cl: #443C68;
-    --tr-bg-cl: #393053;
-    --fr-bg-cl: #18122b;
+/* style.css */
 
-    --border-line-fc: green;
-    --border-line-invld: red;
-    
-    --ft-cl: white;
-
-    --sm-font-sz: 0.8rem;
-    --md-font-sz: 1.1rem;
-    --lr-font-sz: 1.5rem;
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
 }
 
-body{
- background-color: var(--fr-bg-cl);
- color: white;   
-    
+header {
+  background-color: #0077cc;
+  color: white;
+  padding: 1rem;
+  text-align: center;
 }
 
-ul {
-    list-style: none;
+.main {
+  display: flex;
+  min-height: 100vh;
 }
 
-h1{
-    text-align: center;
+.sidebar {
+  width: 250px;
+  background-color: #f0f0f0;
+  padding: 1rem;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
 }
 
-.main{
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(200px, 1fr));
-    grid-template-rows: repeat(auto-fill, 4, 1fr);
-    height: 100vh;
-    
-}
-
-.container{ 
-    grid-area: 1 / 2 / 5 / 7;
-    background-color: var(--pr-bg-cl);
-    border-left: 2px solid black;
-    
-}
-
-.sidebar{
-    grid-area: 1 / 1 / 5 /2;
-    background-color: var(--tr-bg-cl);
-    color: var(--ft-cl);
-    font-size: var(--lr-font-sz);
+.addProjects,
+.addTasks {
+  margin-bottom: 2rem;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    height: 300px;
-    
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.submit, .close {
-    width: 140px;
-    height: 30px;
-    background-color: var(--fr-bg-cl);
-    color: var(--ft-cl);
-    font-size: var(--md-font-sz);
-    margin-top: 8px;
-    margin: 8px auto 0;
-    border: none;
-    border-radius: 4px;
+input[type="text"] {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-.submit:hover, .close:hover{
-    background-color: var(--tr-bg-cl);
+button {
+  padding: 0.5rem;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-dialog {
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0px 0px 6px 2px rgba(245, 242, 242, 0.587);
+button:hover {
+  background-color: #005fa3;
 }
 
-input{
-    height: 30px;
-    font-size: var(--md-font-sz);
-    outline: none;
+.project-list {
+  margin-top: 1rem;
 }
 
-
-
-#projct {
-    width: 180px;
-    
+.project-item {
+  padding: 0.5rem;
+  margin-bottom: 0.25rem;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+  border-left: 4px solid transparent;
+  transition: background-color 0.2s, border-color 0.2s;
 }
 
-.projects {
-    display: flex;
-    flex-direction: column;
-    margin-left: 20px;
+.project-item:hover {
+  background-color: #eaeaea;
 }
 
-.svBtn{
-    width: 120px;
-    margin-top: -18px;
-
+.project-item.active {
+  background-color: #d0ebff;
+  border-left: 4px solid #0077cc;
+  font-weight: bold;
 }
 
-input:focus {
-    border: 2px solid var(--border-line-fc);
-    border-radius: 4px;
+.content {
+  flex: 1;
+  padding: 2rem;
+  background-color: #fff;
 }
 
-
-select{
-    height: 30px;
+.task-list {
+  margin-top: 1rem;
 }
 
-.openBtn{
-    height: 30px;
-    font-size: var(--md-font-sz);
-    background-color: var(--fr-bg-cl);
-    border:  none;
-    color: var(--ft-cl);
-    margin: 10px;
-    border-radius: 4px;
-    width: 180px;
-    cursor: pointer;
+.task-item {
+  padding: 0.5rem;
+  border-bottom: 1px solid #ddd;
 }
 
-.openBtn:hover{
-    background-color: var(--pr-bg-cl);
-    box-shadow: 2px 2px 2px 2px var(--sc-bg-cl);
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f7f7f7;
+  border: 1px solid #ddd;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0;
+  border-radius: 6px;
+  font-size: 1rem;
 }
 
-.contentDiv{
-    display: flex;
-    /* flex-direction: column; */
-    justify-content: space-between;
-    align-items: center;
-    background-color: #18122ba0;
-    margin:  10px ;
-    padding: 0 10px;
-    flex-wrap: wrap;
+.task-checkbox {
+  margin-right: 1rem;
+  cursor: pointer;
+  transform: scale(1.2);
 }
 
-.dltBtn{
-    width: 80px;
-    margin-bottom: 20px;
+.task-item span {
+  flex-grow: 1;
+  margin-left: 0.5rem;
+  word-break: break-word;
 }
 
-#adTask:hover{
-    background-color: #18122B;
-    cursor: pointer;
+.delete-btn {
+  background: transparent rgb(63, 157, 230);
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-left: 1rem;
+  transition: transform 0.2s ease;
 }
 
-h4{
-    cursor: pointer;
+.delete-btn:hover {
+  transform: scale(1.2);
+  color: crimson;
 }
-

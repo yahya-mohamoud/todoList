@@ -1,44 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="index.js" defer type="module"></script>
     <title>Todo list</title>
 </head>
+
 <body>
     <header id="mainHeader">
         <h1>Todo List</h1>
     </header>
+
     <main>
+
         <div class="main">
-            <div class="container">
-                <dialog>
-                    <form action="">
-                        <label for="title">Title:*</label>
-                        <input type="text" id="title"  required placeholder="Task title" required>
-                        <label for="desc">Description</label>
-                        <textarea name="desc" id="desc" value="desc" placeholder="Description" minlength="5"></textarea>
-                        <label for="date">Due to Date:*</label>
-                        <input type="date" id="date" name="dt" required>
-                        <label for="priority">select Priority</label>
-                        <select name="priority" id="priority">
-                            <option value="low">Low</option>
-                            <option value="medium" selected>medium</option>
-                            <option value="high">high</option>
-                        </select>
-                        <button class="close">Close</button>
-                        <button type="submit" class="submit">Submit</button>
-                    </form>
-                </dialog>
-            </div>
+            
             <div class="sidebar">
-                <button class="openBtn">Add a Task</button>
-             
+                <div class="addProjects">
+                    <form id="projectForm">
+                        <input type="text" id="projectInput" placeholder="Add a Project" required />
+                        <button type="submit" class="submit">ADD</button>
+                    </form>
+                </div>
+
+                <div id="projectList" class="project-list"></div>
+
+                <div class="addTasks">
+                    <form id="taskForm">
+
+                        <input type="text" id="taskInput" placeholder="Task description" required />
+                        <button type="submit">Add Task</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="content">
+                <div id="taskList" class="task-list"></div>
+            </div>
         </div>
+
     </main>
     <footer></footer>
 </body>
+
 </html>
-
-
