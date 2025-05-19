@@ -37,7 +37,7 @@ form {
   gap: 0.5rem;
 }
 
-input[type="text"] {
+input, select {
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -133,4 +133,8 @@ button:hover {
 .delete-btn:hover {
   transform: scale(1.2);
   color: crimson;
+}
+
+.priority{
+  margin: 0 20px 0  0;
 }

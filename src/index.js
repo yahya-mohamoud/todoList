@@ -12,6 +12,8 @@ const projectList = document.getElementById("projectList");
 const taskForm = document.getElementById("taskForm");
 const taskInput = document.getElementById("taskInput");
 const taskList = document.getElementById("taskList");
+const date = document.getElementById('dateInput')
+const priority = document.getElementById('priority')
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -71,9 +73,13 @@ taskForm.addEventListener("submit", (e) => {
   e.preventDefault();
   if (!activeProject) return alert("Please select a project first");
   const taskTitle = taskInput.value.trim();
-  if (!taskTitle) return;
+  const taskDate = date.value
+  const taskPriority = priority.value
+  console.log(taskPriority);
+  
+  if (!taskTitle && !taskDate && !taskPriority) return;
 
-  const newTask = createTask(taskTitle);
+  const newTask = createTask(taskTitle, taskDate, taskPriority);
   newTask.completed = false;
   activeProject.tasks.push(newTask);
   taskInput.value = "";
@@ -107,6 +113,18 @@ function displayTasks() {
       displayTasks();
     });
 
+    const priorityEle = document.createElement("h3")
+    priorityEle.classList.add('priority')
+    priorityEle.textContent = task.priority;
+
+    if(task.priority == "Medium") div.style.borderLeft = "10px solid yellow"
+    if(task.priority == "Low") div.style.borderLeft = "10px solid Green"
+    if(task.priority == "High") div.style.borderLeft = "10px solid Red"
+
+    const date = document.createElement('p')
+    date.classList.add('date')
+    date.textContent = task.date
+
     const btn = document.createElement("button");
     btn.innerText = "🗑";
     btn.classList.add("delete-btn");
@@ -119,7 +137,7 @@ function displayTasks() {
       }
     });
 
-    div.append(check, span, btn);
+    div.append(check, span, priorityEle,date,btn);
     taskList.appendChild(div);
   });
 }
